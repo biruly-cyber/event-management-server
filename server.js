@@ -67,23 +67,6 @@ process.on("uncaughtException", (err) => {
   });
 });
 
-// // Socket.io for chatting
-// const chatServer = createServer(app);
-// const io = new Server(chatServer, {
-//   pingTimeout: 60000,
-//   cors: {
-//     origin: "http://localhost:3000",
-//   },
-// });
-
-// io.on("connection", (socket) => {
-//   console.log("a user connected: ", socket);
-//   socket.on("setup", (userData) => {
-//     socket.join(userData?._id);
-//     socket.emit("Connected");
-//   });
-// });
-
 // Listening the server
 server.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);

@@ -1,5 +1,5 @@
 import { DATA_LIMIT_1 } from "../../constants.js";
-import { Vendor } from "../../models/vendor/sound.js";
+import { Vendor } from "../../models/vendor/vendor.js";
 import ErrorHandler from "../../utils/Errorhandler.js";
 
 // Register user
