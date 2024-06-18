@@ -4,150 +4,44 @@ import jwt from "jsonwebtoken";
 import crypto from "crypto";
 
 const vendorSchema = new mongoose.Schema({
-  name: {
+  nameOfBusiness: {
     type: String,
     required: [false, "Name required"],
   },
 
-  category: {
+  state: {
     type: String,
   },
 
-  subCategory: {
+  city: {
     type: String,
   },
 
-  minCost: {
-    type: Number,
-  },
-
-  negotiable: {
-    type: Boolean,
-  },
-
-  likes: {
-    type: Number,
-  },
-
-  feedback: [
-    {
-      user: mongoose.Schema.Types.ObjectId,
-      comment: String,
-      rating: Number,
-    },
-  ],
-
-  images: [
-    {
-      docUrl: String,
-      docPath: String,
-      docType: String,
-      verified: Boolean,
-    },
-  ],
-
-  videos: [
-    {
-      docUrl: String,
-      docPath: String,
-      docType: String,
-      verified: Boolean,
-    },
-  ],
-
-  contactDetails: {
-    mobile: {
-      type: Number,
-      unique: true,
-      required: [true, "Please enter mobile number"],
-      minlength: [10, "Mobile no. must be at least 10 digits"],
-      maxlength: [10, "Mobile no. must be at most 10 digits"],
-    },
-
-    altMobile: {
-      type: Number,
-      required: [true, "Please enter mobile number"],
-      minlength: [10, "Mobile no. must be at least 10 digits"],
-      maxlength: [10, "Mobile no. must be at most 10 digits"],
-    },
-
-    address: {
-      type: String,
-    },
-
-    state: { type: String },
-    city: { type: String },
-    pinCode: {
-      type: Number,
-      minlength: [6, "Pin code must be 6digits"],
-      maxlength: [6, "Pin code must be 6digits"],
-    },
-  },
-
-  clicks: {
-    type: Number,
-    default: 0,
-  },
-
-  impressions: {
-    type: Number,
-    default: 0,
-  },
-
-  features: [
-    {
-      type: String,
-    },
-  ],
-
-  ipAddress: {
+  sectorType: {
     type: String,
   },
 
-  deleted: {
-    type: Boolean,
-  },
-
-  hidden: { type: Boolean },
-
-  minDiscount: { type: Number, default: 0 },
-
-  maxDiscount: { type: Number, default: 0 },
-
-  role: {
+  businessCategory: {
     type: String,
-    enum: [
-      "superAdmin",
-      "admin",
-      "vendor",
-      "user",
-    ],
-    default: "user",
   },
 
-  // OTP
-  otp: {
+  email: {
+    type: String,
+  },
+
+  password: {
+    type: String,
+  },
+
+  mobile: {
     type: Number,
-  },
-
-  otpValidity: {
-    type: Date,
-    default: Date.now,
-  },
-
-  otpVerified: {
-    type: Boolean,
-    default: false,
   },
 
   customId: {
     type: Number,
     required: [true],
   },
-  deviceToken: {
-    type: String,
-  },
-
+  
   createdAt: {
     type: Date,
     default: Date.now,

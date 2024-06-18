@@ -9,65 +9,40 @@ const userSchema = new mongoose.Schema({
     required: [false, "Name required"],
   },
 
+  email: {
+    type: String,
+    required: [false, "Email required"],
+  },
+
+  password: {
+    type: String,
+    required: [false, "Email required"],
+    minLength: [6, "Password must be at least 6 characters"],
+  },
+
   mobile: {
     type: Number,
-    required: [true, "Mobile no. required"],
+    required: [false, "Mobile no. required"],
     minLength: [10, "Mobile no. must be at least 10 digits"],
     maxLength: [10, "Mobile no. must be at least 10 digits"],
   },
 
-  gender: {
-    type: String,
-    required: [false, "Gender required"],
+  eventLocation: {
+    state: String,
+    city: String,
   },
 
-  images: [
-    {
-      docUrl: String,
-      docPath: String,
-      docType: String,
-      verified: Boolean,
-    },
-  ],
-
-  deleted: {
-    type: Boolean,
-  },
-
-  hidden: { type: Boolean },
-
-  minDiscount: { type: Number, default: 0 },
-
-  maxDiscount: { type: Number, default: 0 },
-
-  role: {
-    type: String,
-    enum: ["superAdmin", "admin", "vendor", "user"],
-    default: "user",
-  },
-
-  // OTP
-  otp: {
+  eventDate: {
     type: Number,
   },
 
-  otpValidity: {
-    type: Date,
-    default: Date.now,
-  },
-
-  otpVerified: {
-    type: Boolean,
-    default: false,
+  eventFor: {
+    type: String,
   },
 
   customId: {
     type: String,
     required: [true],
-  },
-
-  deviceToken: {
-    type: String,
   },
 
   createdAt: {

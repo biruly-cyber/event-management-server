@@ -11,10 +11,10 @@ export const sendOtpToUser = async (mobile, otp, next) => {
       headers: {
         accept: "application/json",
         "content-type": "application/json",
-        authkey: "413913ANVtFlMuX65a64ef1P1",
+        authkey: process.env.AUTH_KEY,
       },
       data: {
-        template_id: "65c9844bd6fc0561ad7a7d92",
+        template_id: process.env.TEMPLATE_ID,
         short_url: "1 (On) or 0 (Off)",
         recipients: [{ mobiles: `91${mobile}`, otp: otp }],
       },
