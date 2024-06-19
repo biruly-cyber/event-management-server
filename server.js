@@ -57,7 +57,6 @@ io.on("connection", (socket) => {
 
 // Uncaught promise rejection
 process.on("uncaughtException", (err) => {
-  console.log(err.message);
   console.log(
     "Shutting down the server due to uncaught exception: " + err.message
   );
@@ -74,7 +73,6 @@ server.listen(process.env.PORT, () => {
 
 // Unhandled promise rejection
 process.on("unhandledRejection", (err) => {
-  console.log(err.message);
   console.log(
     "Shutting down the server due to unhandledRejection exception: " +
       err.message

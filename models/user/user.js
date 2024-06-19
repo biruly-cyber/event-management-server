@@ -7,17 +7,20 @@ const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [false, "Name required"],
+    trim: true,
   },
 
   email: {
     type: String,
     required: [false, "Email required"],
+    trim: true,
   },
 
   password: {
     type: String,
     required: [false, "Email required"],
     minLength: [6, "Password must be at least 6 characters"],
+    trim: true,
   },
 
   mobile: {
@@ -25,24 +28,35 @@ const userSchema = new mongoose.Schema({
     required: [false, "Mobile no. required"],
     minLength: [10, "Mobile no. must be at least 10 digits"],
     maxLength: [10, "Mobile no. must be at least 10 digits"],
+    trim: true,
   },
 
   eventLocation: {
-    state: String,
-    city: String,
+    state: {
+      type: String,
+      trim: true,
+    },
+    
+    city: {
+      type: String,
+      trim: true,
+    },
   },
 
   eventDate: {
     type: Number,
+    trim: true,
   },
 
   eventFor: {
     type: String,
+    trim: true,
   },
 
   customId: {
     type: String,
     required: [true],
+    trim: true,
   },
 
   createdAt: {

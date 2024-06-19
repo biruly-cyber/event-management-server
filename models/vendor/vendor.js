@@ -7,41 +7,50 @@ const vendorSchema = new mongoose.Schema({
   nameOfBusiness: {
     type: String,
     required: [false, "Name required"],
+    trim: true,
   },
 
   state: {
     type: String,
+    trim: true,
   },
 
   city: {
     type: String,
+    trim: true,
   },
 
   sectorType: {
     type: String,
+    trim: true,
   },
 
   businessCategory: {
     type: String,
+    trim: true,
   },
 
   email: {
     type: String,
+    trim: true,
   },
 
   password: {
     type: String,
+    trim: true,
   },
 
   mobile: {
     type: Number,
+    trim: true,
   },
 
   customId: {
-    type: Number,
+    type: String,
     required: [true],
+    trim: true,
   },
-  
+
   createdAt: {
     type: Date,
     default: Date.now,

@@ -68,7 +68,7 @@ export const login = async (req, res, next) => {
     const isMatched = await bcrypt.compare(password, user.password);
 
     if (!isMatched) {
-      return next(new ErrorHandler("Opps! user credentials mismatched!", 400));
+      return next(new ErrorHandler("Opps! login credentials mismatched!", 400));
     }
 
     // Send token
